@@ -1,0 +1,101 @@
+
+.description{
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+.game-container{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+h3{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  color: #37517e;
+}
+
+/* Carousel CSS */
+
+.carousel {
+    position: relative;
+  }
+  .carousel-item img {
+    object-fit: cover;
+  }
+  #carousel-thumbs {
+    background: rgba(255,255,255,.3);
+    bottom: 0;
+    left: 0;
+    padding: 0 50px;
+    right: 0;
+  }
+  #carousel-thumbs img {
+    border: 5px solid transparent;
+    cursor: pointer;
+  }
+  #carousel-thumbs img:hover {
+    border-color: rgba(255,255,255,.3);
+  }
+  #carousel-thumbs .selected img {
+    border-color: #fff;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+  }
+  @media all and (max-width: 767px) {
+    .carousel-container #carousel-thumbs img {
+      border-width: 3px;
+    }
+  }
+  @media all and (min-width: 576px) {
+    .carousel-container #carousel-thumbs {
+      position: absolute;
+    }
+  }
+  @media all and (max-width: 576px) {
+    .carousel-container #carousel-thumbs {
+      background: #ccccce;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {
+    #carousel-thumbs {
+      display: none;
+    }
+
+    .return {
+      display: none;
+    }
+  }
+
+  /* Image css */
+
+  .item-image{
+    height: 300px;
+    width: auto;
+  }
+
+  /* add to cart styling */
+  
+  .purchase{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Game description styling */
+  .desc{
+    padding-top: 20px;
+    padding-left: 20px;
+    color: #37517e;
+  }
+
+  .desc-start{
+    padding-right: 40px;
+    font-weight: bold;
+  }
+
+  .return{
+    padding-left: 600px;
+  }

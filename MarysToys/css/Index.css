@@ -1,0 +1,105 @@
+
+/* this will handle index.html using carousel */
+.index {
+    padding-top: 20px;
+    height: 800px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+  }
+  .container {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+  }
+  
+  .carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    animation: rotate360 40s infinite forwards linear;
+  }
+
+  .carousel__face { 
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow:inset 0 0 0 1800px rgba(0, 0, 0, 0.5);
+    display: flex;
+  }
+  
+  span {
+    margin: auto;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* added pics and make it to rotate */
+  .carousel__face:nth-child(1) {
+    background-image: url("https://th.bing.com/th/id/OIP.9D2gSdqWh4dglVwZxt1bFwHaE7?pid=ImgDet&rs=1");
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) { 
+    background-image: url("https://static.parenting.com/wp-content/uploads/2019/05/11010516/kids-toys-featured-1200x720.jpg");
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    background-image: url("https://i.pinimg.com/originals/b9/8c/80/b98c80f7549cf206a7a4485d111c011c.jpg");
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    background-image: url("https://th.bing.com/th/id/OIP.IW25m2U5_Nr1_5GFY50mcAHaE8?pid=ImgDet&rs=1");
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) { 
+    background-image: url("https://th.bing.com/th/id/R.01776b824f1191dac99d5a6e224bc2dc?rik=fqOodUKwUkjqpg&riu=http%3a%2f%2fmedia4.popsugar-assets.com%2ffiles%2f2012%2f06%2f26%2f2%2f192%2f1922664%2fa068f67a77a5da03_thumb.xxxlarge%2fi%2fRetro-Toys-Kids.jpg&ehk=K6UisfK6wVySnr8mNaLdV6RqJ3vxcnqv4ylsEbVFLLM%3d&risl=&pid=ImgRaw&r=0");
+   transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) { 
+    background-image: url("https://th.bing.com/th/id/OIP.qpSdhKGsseID-SvOumR44wHaIe?pid=ImgDet&rs=1");
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) { 
+    background-image: url("https://th.bing.com/th/id/OIP.kqB_qVs62YKnhfGV8dzA0QHaEO?pid=ImgDet&rs=1");
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    background-image: url("https://www.readersdigest.ca/wp-content/uploads/2019/02/shutterstock_265117949.jpg?w=1000");
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    background-image: url("https://3.bp.blogspot.com/-lJXVfe99cyA/WCIyENaLP0I/AAAAAAAADs8/rBLTL6CK6PACwyarL3RBrmF5fkKpOtV5wCLcB/s400/20161108_164206.jpg");
+    transform: rotateY(320deg) translateZ(430px); }
+  
+  
+  
+  @keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+
+  p
+  {
+    stroke: rgba(255,255,255,0.5);
+    stroke-width: 1.25px;
+    padding-top: 25%;
+    font-size: 30px;
+    color: rgb(45, 122, 133);
+    text-align: center;
+    text-decoration: none;
+    animation: fadeOut 10s ease;
+    animation-delay: 0s;
+    animation-fill-mode:forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }

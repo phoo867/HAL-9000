@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><!--  bootstrap link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script><!--  bootstrap link -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><!--  bootstrap link -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jqery link -->
+  <link rel="stylesheet" href="../css/products.css">
+  <link rel="stylesheet" href="../css/site.css" >
+  <script src="../js/products.js"></script>
+  <script src="../js/Cart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="intro">
+            <h1>
+              <span style="--i:1">H</span>
+              <span style="--i:2">E</span>
+              <span style="--i:3">L</span>
+              <span style="--i:4">L</span>
+              <span style="--i:5">O</span>
+              <span style="--i:6">!</span>
+            </h1>
+        </div>
+        <nav class="nav">
+          <a href="../html/index.html">Home</a>
+          <a href = "../html/About.html">About Us</a>
+          <a href="../html/reviews.html">Reviews</a>
+          <a href="../html/products.html">Products</a>
+          <a href="../html/FAQ.html">Contact Us</a>
+          <a href="../html/Cart.html"><img id="cartIcon" src="../images/ShoppingCartIcon.png"></a>
+        </nav>
+    </header>
+    <h2 class="glowIn"><span>Our Products</span></h2>
+    <main class="products">
+      <!-- radio buttons under the pic -->
+      <input id="unicorn" type="radio" name="position" checked />
+      <label for="unicorn" class="radio-label">Double Click the button to show similar products</label> <!-- commend for user -->
+      <input id="ironman" type="radio" name="position" />
+      <label for="ironman" class="radio-label">Double Click the button to show similar products</label><!-- commend for user -->
+      <input id="minion"type="radio" name="position" />
+      <label for="minion" class="radio-label">Double Click the button to show similar products</label><!-- commend for user -->
+      <input id="hkitty"type="radio" name="position" />
+      <label for="hkitty" class="radio-label">Double Click the button to show similar products</label><!-- commend for user -->
+      <input id="pfury"type="radio" name="position" />
+      <label for="pfury" class="radio-label">Double Click the button to show similar products</label><!-- commend for user -->
+      <input id="rduck"type="radio" name="position" />
+      <label for="rduck" class="radio-label">Double Click the button to show similar products</label><!-- commend for user -->
+      <input id="tbears"type="radio" name="position" />
+      <label for="tbears" class="radio-label">Double Click the button to show similar products</label><!-- commend for user -->
+      <input id="legos"type="radio" name="position" />
+      <label for="legos" class="radio-label">Double Click the button to show similar products</label><!-- commend for user -->
+      
+    <!-- Added products with grip and it will rotate when click radio button -->
+    <main id="carousel">
+      <div class="item" id="pinkunicorn">
+        <img src="../images/Products/unicorn 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            Big Light up Pink Unicorn Stuffed Rainbow LED Unicorn 
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(8)">Add To Cart</button>
+      </div>
+      <div class="item" id="ironman">
+        <img src="../images/Products/iron-man 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            Iron Man 
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(4)">Add To Cart</button>
+      </div>
+      <div class="item" id="minion">
+        <img src="../images/Products/minions 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            Minions: Babble Otto Large Interactive Toy
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(6)">Add To Cart</button>
+      </div>
+      <div class="item" id="hello-kitty">
+        <img src="../images/Products/hello-kitty 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            Hello Kitty: Gift for Kids 2 Years Old & Up.
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(3)">Add To Cart</button>
+      </div>
+      <div class="item" id="fury">
+        <img src="../images/Products/1958 Plymouth Fury 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            1958 Plymouth Fury Limited Edition Replica 1/43 Scale
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(1)">Add To Cart</button>
+      </div>
+      <div class="item" id="duck">
+        <img src="../images/Products/duck 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            Baby Splash Toys Lovely Ducks 
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+      </div>
+      <div class="item" id="teddybears">
+        <img src="../images/Products/teddybears 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            Staffed Twin Teddy Bears
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(7)">Add To Cart</button>
+      </div>
+      <div class="item" id="lego">
+        <img src="../images/Products/lego 1.jpg" style="width:200px;" style="height:200px" style="border-radius: 2%;">
+        <p>
+            Lego: Gift for 3 Years Old & Up
+        </p>
+        <button type="button" class="btn btn-addtocart" onclick="addItemToCart(5)">Add To Cart</button>
+      </div>
+    </main>
+    </main>
+
+    <!-- Added similiar products -->
+    <main id="similarproducts">
+      <div class="container">
+        <h2>Similiar Products</h2>
+        <div class="unicorn">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/unicorn 1.webp" alt="Lights" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>Unicorn</p>
+                  <p>$19.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/unicorn 2.jpg" alt="Nature" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>Unicorn</p>
+                  <p>$25.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/unicorn 3.jpeg" alt="Fjords" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>Unicorn</p>
+                  <p>$23.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="ironman">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/ironman 1.jpeg" alt="Lights" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>Iron-man</p>
+                  <p>$19.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/ironman 2.jpeg" alt="Nature" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>Iron-man</p>
+                  <p>$25.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/ironman 3.jpg" alt="Fjords" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>Iron-man</p>
+                  <p>$23.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="minion">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/minion 1.jpg" alt="Lights" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>minion</p>
+                  <p>$19.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/minion 2.jpg" alt="Nature" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>minion</p>
+                  <p>$25.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/minion 3.jpg" alt="Fjords" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>minion</p>
+                  <p>$23.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hellokitty">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/hkitty 1.jpg" alt="Lights" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>HelloKitty</p>
+                  <p>$19.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/hkitty 2.jpg" alt="Nature" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>HelloKitty</p>
+                  <p>$25.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/hkitty 3.jpg" alt="Fjords" style="width:100px;" style="height:100px">
+                <div class="caption">
+                  <p>HelloKitty</p>
+                  <p>$23.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="1958">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/pfury 1.jpg" alt="Lights" style="width:100px">
+                <div class="caption">
+                  <p>1958 Plymouth Fury</p>
+                  <p>$19.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/pfury 2.jpeg" alt="Nature" style="width:100px">
+                <div class="caption">
+                  <p>1958 Plymouth Fury</p>
+                  <p>$25.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/pfury 3.jpg" alt="Fjords" style="width:100px">
+                <div class="caption">
+                  <p>1958 Plymouth Fury</p>
+                  <p>$23.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="rubberduck">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/rduck 1.webp" alt="Lights" style="width:100px">
+                <div class="caption">
+                  <p>Rubber Duck</p>
+                  <p>$19.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/rduck 2.jpg" alt="Nature" style="width:100px">
+                <div class="caption">
+                  <p>Rubber Duck</p>
+                  <p>$25.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/rduck 3.webp" alt="Fjords" style="width:100px">
+                <div class="caption">
+                  <p>Rubber Duck</p>
+                  <p>$23.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="teddybears">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/tbears 1.webp" alt="Lights" style="width:100px">
+                <div class="caption">
+                  <p>Teddy Bear</p>
+                  <p>$59.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/tbears 2.jpg" alt="Nature" style="width:100px">
+                <div class="caption">
+                  <p>Teddy Bear</p>
+                  <p>$125.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/tbears 3.webp" alt="Fjords" style="width:100px">
+                <div class="caption">
+                  <p>Teddy Bear</p>
+                  <p>$123.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="Lego">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="#" target="_blank"> -->
+                <img src="../images/similarproducts/lego 1.webp" alt="Lights" style="width:100px">
+                <div class="caption">
+                  <p>Lego</p>
+                  <p>$19.99</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/lego 2.jpg" alt="Nature" style="width:100px">
+                <div class="caption">
+                  <p>Lego</p>
+                  <p>$25.36</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+                <img src="../images/similarproducts/lego 3.webp" alt="Fjords" style="width:100px">
+                <div class="caption">
+                  <p>Lego</p>
+                  <p>$38.48</p>
+                  <button type="button" class="btn btn-addtocart" onclick="addItemToCart(2)">Add To Cart</button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    </main>
+        <footer class="footer">   
+            <div class="copy">© 2023</div>
+            <div class="footer-links">
+                <div class="links">
+                <span>Mary's Toys</span>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

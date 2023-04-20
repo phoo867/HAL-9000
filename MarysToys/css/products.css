@@ -1,0 +1,230 @@
+/* Glow in function for h2 */
+h2{
+    padding-top: 20px;
+    color: rgb(87, 159, 168);
+    text-align: center;
+    line-height: 1.8;
+    font-family: Lora, serif;
+    font-size: 50px;
+  }
+  
+  .glowIn {
+    color: rgb(87, 159, 168);
+  }
+    span{
+    animation: glow-in 1s both;
+    }
+  
+  @keyframes glow-in {
+    from {
+      opacity: 0;
+    }
+    65% {
+      opacity: 1;
+      text-shadow: 0 0 25px rgb(90, 9, 22);
+    }
+    75% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.7;
+    }
+  }
+  
+/* grid that will control products pic and radio buttons */
+.products {
+    height: 500px;
+    margin-left: 800px;
+    display: grid;
+    grid-template-rows: 268px 150px;
+    grid-template-columns: repeat(10, calc(29% / 10));
+    align-items: center;
+    justify-items: center;
+    font-size: 12px;
+  }
+  #carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100vw;
+    height: 500px;
+    margin-top: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 8;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+  }
+  
+  div.item {
+    position: absolute;
+    max-width: 200px;
+    text-align: center;
+    display: inline-block;
+    background-color: coral;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+      translateX(calc(-190px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+    box-shadow: 0 0 10px 5px rgb(87, 159, 168), 
+              0 0 20px 10px rgba(255, 255, 255, 0.5), 
+              0 0 30px 15px rgba(255, 255, 255, 0.5), 
+              0 0 40px 20px rgba(255, 255, 255, 0.5), 
+              0 0 50px 25px rgba(255, 255, 255, 0.5);
+  }
+
+
+
+  div.item p{
+    font-size: 14px;
+    margin: 8px 6px 10px;
+    padding-top: 5px;
+  }
+ /* Add to cart  */
+    .btn {
+        display: inline-block;
+        margin-bottom: 10px;
+        width: 100px;
+        background-color: rgb(87, 159, 168);
+        margin-left: 15px;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+  div.item:nth-of-type(1) {
+    --offset: 1;
+    background-color: whitesmoke;
+  }
+  div.item:nth-of-type(2) {
+    --offset: 2;
+    background-color: whitesmoke;
+  }
+  div.item:nth-of-type(3) {
+    --offset: 3;
+    background-color: whitesmoke;
+  }
+  div.item:nth-of-type(4) {
+    --offset: 4;
+    background-color: whitesmoke;
+  }
+  div.item:nth-of-type(5) {
+    --offset: 5;
+    background-color: whitesmoke;
+  }
+  div.item:nth-of-type(6) {
+    --offset: 6;
+    background-color: whitesmoke;
+  }
+  div.item:nth-of-type(7) {
+    --offset: 7;
+    background-color: whitesmoke;
+  }
+  div.item:nth-of-type(8) {
+    --offset: 8;
+    background-color: whitesmoke;
+  }
+
+  input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(1):checked ~ main#carousel {
+    --position: 1;
+  }
+  
+  input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(2):checked ~ main#carousel {
+    --position: 2;
+  }
+  
+  input:nth-of-type(3) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(3):checked ~ main#carousel {
+    --position: 3;
+  }
+  
+  input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(4):checked ~ main#carousel {
+    --position: 4;
+  }
+  
+  input:nth-of-type(5) {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(5):checked ~ main#carousel {
+    --position: 5;
+  }
+
+  input:nth-of-type(6) {
+    grid-column: 7 / 8;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(6):checked ~ main#carousel {
+    --position: 6;
+  }
+
+  input:nth-of-type(7) {
+    grid-column: 8 / 9;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(7):checked ~ main#carousel {
+    --position: 7;
+  }
+
+  input:nth-of-type(8) {
+    grid-column: 9 / 10;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(8):checked ~ main#carousel {
+    --position: 8;
+  }
+
+#similarproducts
+{
+  margin-top: -23px;
+}
+
+.container
+{
+  width: 800px;
+  margin-bottom: 50px;
+}
+
+.radio-label {
+  display: none; /* hide all labels by default */
+  color: black;
+  font-size: 10px;
+}
+
+/* input[type="radio"]:hover + .radio-label {
+  display: block; /* show the label when the corresponding radio button is hovered */

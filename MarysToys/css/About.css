@@ -1,0 +1,15 @@
+.aboutus {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    width: 80%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+}
+
+img{
+    width: 500px;
+    height: auto;
+    float: right;
+    padding-right: 28px;
+}

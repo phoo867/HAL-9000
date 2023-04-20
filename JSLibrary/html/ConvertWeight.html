@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Temperature Conversion Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="../js/tests.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Weight Conversion Form</h2>
+    <form role="form" id="weight-form" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input type="number" class="form-control" id="weight" name="weight" required>
+        <div class="invalid-feedback">
+          Please enter a weight.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="weight-type">Weight Type:</label>
+        <select class="form-control" id="weight-type" name="weightType" required>
+          <option value="">Select weight type...</option>
+          <option value="grams">Grams</option>
+          <option value="kilograms">Kilograms</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a weight type.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="text">text</label>
+        <textarea class="form-control" id="text" name="text" rows="5" required></textarea>
+        <div class="invalid-feedback">
+          Please enter some text.
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="checkbox">
+          <label><input type="checkbox" name="agree" required> I agree to the terms and conditions.</label>
+          <div class="invalid-feedback">
+            You must agree to the terms and conditions.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="time">Time:</label>
+        <input type="time" class="form-control" id="time" name="time" required>
+        <div class="invalid-feedback">
+          Please enter a time.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+        <div class="invalid-feedback">
+          Please enter a date.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="file">File:</label>
+        <input type="file" class="form-control" id="file" name="file" required>
+        <div class="invalid-feedback">
+          Please select a file.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="range">Range:</label>
+        <input type="range" class="form-control" id="range" name="range" min="0" max="100" step="1" value="0" required>
+        <div class="invalid-feedback">
+          Please select a value on the range.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="converted-weight">Converted Weight:</label>
+        <input type="number" class="form-control" id="converted-weight" name="convertedWeight" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary">Convert Weight</button>
+    </form>
+  </div>
+  <!-- Include jQuery and Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+   // Handle form submission
+   $('#weight-form').submit(function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const weight = parseFloat($('#weight').val());
+      const weightType = $('#weight-type').val();
+
+      // Perform conversion based on selected weight type
+      let convertedWeight;
+      if (weightType === 'grams') {
+        convertedWeight = gramsToKilograms(weight);
+      } else if (weightType === 'kilograms') {
+        convertedWeight = kilogramsToGrams(weight);
+      }
+
+      // Update form with converted weight
+      $('#converted-weight').val(convertedWeight);
+    });
+
+  </script>
+</body>
+</html>

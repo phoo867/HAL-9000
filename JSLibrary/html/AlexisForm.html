@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Sample Form</h2>
+        <form role="form" id="weight-form" class="needs-validation" novalidate>
+            <!-- Text -->
+            <div class="form-group">
+                <label for="text">Text:</label>
+                <input type="text" class="form-control" id="text" name="text" required>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label for="textbox">Textarea:</label>
+                <textarea type="textarea" class="form-control" id="textbox" name="textbox" rows="5" required>Enter text here</textarea>
+            </div>
+
+            <!-- Radio Button -->
+            <div class="form-group">
+                <fieldset>
+                    <h4>Radio Buttons</h4>
+                    <input type="radio" id="radio1" class="radioButtons">
+                    <label for="radio1">Yes</label><br>
+                    
+                    <input type="radio" id="radio2" class="radioButtons">
+                    <label for="radio2">No</label>
+                </fieldset>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-group">
+                <h4>Select box</h4>
+                <input type="checkbox" id="select" name="select">
+                <label for="select">Check this box</label><br>
+            </div>
+
+            <!-- File -->
+            <div class="form-group">
+                <label for="file">File:</label>
+                <input type="file" class="form-control" id="file" name="file" required>
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+
+            <!-- Time -->
+            <div class="form-group">
+                <label for="timeSelect">Select a time:</label>
+                <input type="time" id="timeSelect" name="timeSelect" required>
+            </div>
+
+            <!-- Range -->
+            <div class="form-group">
+                <label for="range">Range:</label>
+                <input type="range" class="form-control" id="range" name="range" min="0" max="100" step="1" value="0">
+            </div>
+
+            <!-- Submit -->
+            <div class="form-group">
+                <input type="submit" value="Submit" onclick="submitFunction()">
+            </div>
+
+            <script>
+                function submitFunction(){
+                    window.alert('Your form has been submitted')
+                };
+            </script>
+        </form>
+    </div>
+</body>
+</html>
