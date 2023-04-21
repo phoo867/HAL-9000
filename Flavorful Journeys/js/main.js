@@ -4,6 +4,11 @@
 //set up an event listener for when DOMContent is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     "use strict";
+    
+    /**
+     * Preloader
+     */
+
     //use the method to find the preloader element using "preloader" ID 
     const preloader = document.querySelector('#preloader');
     if (preloader) {
@@ -21,14 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           preloader.classList.add('loaded');
         }, 1000);
-
         setTimeout(() => {
           preloader.remove();
         }, 2800);
       });
     }
   
-
 /**
  * Mobile nav toggle
  */
@@ -205,8 +208,6 @@ function aos_init() {
 // waits for window fully load
 window.addEventListener('load', () => {
   aos_init(); // call the funtion after the window is fully loaded.
-});
-
 });
 
     /**
