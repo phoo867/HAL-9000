@@ -357,4 +357,4 @@ window.addEventListener('load', () => {
       aos_init();
     });
   
-  });
+}}); 
