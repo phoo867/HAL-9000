@@ -53,7 +53,7 @@
                 <ul>
                 <li><a href="#">Italian Cuisine</a></li>
                 <li><a href="#">French Cuisine</a></li>
-                <li><a href="#">Mexican cuisine</a></li>
+                <li><a href="#">Bakery</a></li>
                 <li class="dropdown"><a href="#"><span>Asian Cuisine</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                     <li><a href="#">East Asia Cuisine</a></li>
@@ -87,7 +87,7 @@
             <div class="container position-relative">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6 text-center">
-                <h2>About</h2>
+                <h2>About Me</h2>
                 <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
     
                 <a class="cta-btn" href="contact.html">Contact Me Here</a>
@@ -146,13 +146,23 @@
     </main>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-        <div class="container">
-        <div class="copyright">
-            &copy; Copyright <strong><span>Flavorful Journeys</span></strong>. All Rights Reserved
-        </div>
-        </div>
-    </footer><!-- End Footer -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span id="currentYear"></span> <span>Flavorful Journeys</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!--Year added in Footer -->
+  <script>
+    // Get the current year
+    var currentYear = new Date().getFullYear();
+    
+    // Set the current year in the footer
+    document.getElementById("currentYear").textContent = currentYear;
+  </script>
+  <!-- End Year added in  Footer -->
 
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 </body>
