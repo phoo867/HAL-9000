@@ -1,0 +1,49 @@
+@media print {
+    /* Hide the header and footer */
+    #header, #footer, #navbar, img, .swiper-button-prev, .swiper-button-next, .header-social-links, .page-header p{
+      display: none;
+    }
+  
+    /* Set the font size and style for better readability */
+    body {
+        font-size: 12pt;
+        font-family: "Times New Roman", serif;
+      }
+  
+      /* Remove the background color */
+      body, .page-header {
+        background-color: transparent;
+      }
+  
+      .page-header h2
+      {
+        margin-top: -10%;
+      }
+  
+      .portfolio-description
+      {
+        margin-top: -18%;
+        padding-bottom: 30px;
+      }
+
+      .portfolio-description .intro
+      {
+        display: none;
+      }
+
+      .portfolio-info
+      {
+        margin-top: -5%;
+      }
+
+      .portfolio-info ul {
+        margin-top: -5%;
+      }
+
+      /* hide mobile nav bar */
+      .mobile-nav-show,
+      .mobile-nav-hide{
+        display: none;
+  }
+}
+  
