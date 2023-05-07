@@ -21,7 +21,7 @@ var reviewArray = [
 
   {name: 'Sophia Bennett',
       image: '../images/TestimonialImages/Profile5.jpg',
-      comment: 'Amelia Johnsons blog has become my go-to source for culinary inspiration. Her recipes are not only incredibly delicious but also accessible for home cooks like myself. I love how she infuses her passion for travel into her dishes, transporting me to different corners of the world through flavors and ingredients. From comforting classics to exciting new creations, her blog never fails to impress and has truly elevated my cooking game!'
+      comment: 'Amelia Johnsons blog has become my go-to source for culinary inspiration. Her recipes are not only incredibly delicious but also accessible for home cooks like myself. I love how she infuses her passion for travel into her dishes, transporting me to different corners of the world through flavors and ingredients!'
       },
     ]
 
@@ -52,7 +52,7 @@ function populateTestimonial(){
   for (let i = 0; i < length; i++) {
     const testimonial = reviewArray[i];
     
-    const starsHtml = '<i class="bi bi-star-fill"></i>';
+    const starsHtml = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
     const testimonialHtml = `
       <div class="swiper-slide">
         <div class="testimonial-item">

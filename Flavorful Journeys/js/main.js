@@ -134,7 +134,7 @@ new Swiper('.slides-1', {
   loop: true,
   //sets up automatic playback of the slider
   autoplay: {
-    delay: 5000,
+    delay: 3000,
     disableOnInteraction: false // prevent slider from stopping autoplay when user interacting.
   },
   //set the number of slides to display
@@ -151,6 +151,7 @@ new Swiper('.slides-1', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   }
+
 });
 
   /**
@@ -160,7 +161,7 @@ new Swiper('.slides-1', {
     speed: 600,
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 3000,
       disableOnInteraction: false
     },
     slidesPerView: 'auto',
