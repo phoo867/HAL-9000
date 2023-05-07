@@ -1,109 +1,287 @@
-const testimonialsData = [
-  {
-    stars: 5,
-    text: "Amelia's recipe blog is a culinary gem! Her creative and diverse recipes, along with clear instructions, have expanded my cooking skills. I love how she incorporates her travel experiences into her dishes, adding a unique touch. Thanks to her blog, I've become the go-to chef among my friends!",
-    imageUrl: "../images/TestimonialImages/Profile1.jpg",
-    name: "Saul Goodman"
-  },
-  {
-    stars: 5,
-    text: "Amelia's recipe blog is my go-to resource for all things food-related. Her easy-to-follow recipes, coupled with personal stories of her travel adventures, make cooking feel like a journey itself. I trust her guidance every step of the way.",
-    imageUrl: "../images/TestimonialImages/Profile2.jpg",
-    name: "Sara Wilsson"
-  },
+// this js will include overall functions for all pages
 
-  {
-    stars: 5,
-    text: "Amelias recipe blog is a culinary treasure trove! From gluten-free to vegan options, her diverse recipes cater to various dietary preferences. Her passion for travel shines through, taking my taste buds on an international adventure. Her organized blog makes it easy to find the perfect recipe for any occasion.",
-    imageUrl: "../images/TestimonialImages/Profile3.jpg",
-    name: "Olivia Parker"
-  },
+//preloader js 
+//set up an event listener for when DOMContent is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  "use strict";
 
-  {
-    stars: 5,
-    text: "Amelias recipe blog is a game-changer! Her creative and detailed recipes make cooking approachable. I love how her travel-inspired dishes add a sense of adventure to my everyday meals. Her blog is a constant source of inspiration. Highly recommended!",
-    imageUrl: "../images/TestimonialImages/Profile4.jpg",
-    name: "Ava Reynolds"
-  },
+  /**
+   * Preloader
+   */
+  //use the method to find the preloader element using "preloader" ID 
+  const preloader = document.querySelector('#preloader');
+  if (preloader) {
+    //sets up an event listener for when the entire page is fully loaded.
+    window.addEventListener('load', () => {
+      //adds a CSS class to the preloader element after a 1 second delay, which could hide the preloader or display a loading animation.
+      setTimeout(() => {
+        preloader.classList.add('loaded');
+      }, 1000);
+      // removes the preloader element from the DOM after a 2.8 second delay
+      setTimeout(() => {
+        preloader.remove();
+      }, 2800);
+    });
+  }
 
-  {
-    stars: 5,
-    text: "Amelia Johnsons blog has become my go-to source for culinary inspiration. Her recipes are not only incredibly delicious but also accessible for home cooks like myself. I love how she infuses her passion for travel into her dishes, transporting me to different corners of the world through flavors and ingredients!'",
-    imageUrl: "../images/TestimonialImages/testimonials-2.jpg",
-    name: "Sophia Bennett"
-  },
-]
+  /**
+   * Mobile nav toggle
+   */
+    // Use document.querySelector to find elements from the page with the class ".mobile-nav-show" and '.mobile-nav-hide', assign them to the variables
+  const mobileNavShow = document.querySelector('.mobile-nav-show');
+  const mobileNavHide = document.querySelector('.mobile-nav-hide');
 
-function submitform() {
-    event.preventDefault(); // prevent the default form submission behavior
+  //uses the method to find all elements on the page with the class .mobile-nav-toggle and loop through each element using forEach() method 
+  document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
+    //sets up an event listener for each toggle element. When a click event is detected, it prevents the default behavior (i.e. following a link or submitting a form), and calls the mobileNavToogle() function.
+    el.addEventListener('click', function(event) {
+      event.preventDefault();
+      mobileNavToogle();
+    })
+  });
+
+  function mobileNavToogle() {
+  //uses the document.querySelector() method to find the <body> element and toggles the CSS class .mobile-nav-active on or off depending on whether it is currently present.
+  document.querySelector('body').classList.toggle('mobile-nav-active');
+  // toggles the CSS class .d-none on or off for the mobileNavShow element, which could hide or display it.
+  mobileNavShow.classList.toggle('d-none');
+  // toggles the CSS class .d-none on or off for the mobileNavHide element, which could hide or display it.
+  mobileNavHide.classList.toggle('d-none');
+  }
+
+  /**
+   * Hide mobile nav on same-page/hash links
+   */
+  // use the method to find the element ID "navbar a" and loop through each element using forEach and assign it to navbarlink variable
+  document.querySelectorAll('#navbar a').forEach(navbarlink => {
+    //checks whether the current navbarlink element has a hash property. If it does not have a hash property, the function returns early and does not execute the remaining code for this element.
+    if (!navbarlink.hash) return;
+    // use the method to find the element ID in navbarlink's hash property. If no such element exists, the function returns early and does not execute the remaining code for this element.
+    let section = document.querySelector(navbarlink.hash);
+    if (!section) return;
+    //sets up an event listener for when the navbarlink element is clicked.
+    navbarlink.addEventListener('click', () => {
+      //checks whether the .mobile-nav-active class is present on the <body> element. If it is, it calls the mobileNavToogle() function to close the mobile navigation menu.
+      if (document.querySelector('.mobile-nav-active')) {
+        mobileNavToogle();
+      }
+    });
+
+  });
+
+  /**
+   * Toggle mobile nav dropdowns
+   */
+  // use the method to find 'a' element then assign it to the navDropdowns variable.
+  const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
+
+  navDropdowns.forEach(el => {
+     //sets up an event listener for when the el element is clicked.
+    el.addEventListener('click', function(event) {
+      // prevents the default action of clicking the el element, which would normally follow its href attribute.
+      if (document.querySelector('.mobile-nav-active')) {
+        event.preventDefault();
+
+        // use the classList.toggle() method to add or remove the classes active and dropdown-active to the el element
+        this.classList.toggle('active');
+        this.nextElementSibling.classList.toggle('dropdown-active');
+
+        // use the method to find the element, it use 'classList.toggle' to switch between the two elements 'up and down'.
+        let dropDownIndicator = this.querySelector('.dropdown-indicator');
+        dropDownIndicator.classList.toggle('bi-chevron-up');
+        dropDownIndicator.classList.toggle('bi-chevron-down');
+      }
+    })
+  });
+
+  /**
+   * Scroll top button
+   */
+  const scrollTop = document.querySelector('.scroll-top');
+  if (scrollTop) {
+    //declares a function named togglescrollTop that will be used to add or remove the active class from the scrollTop element based on the scroll position.
+    const togglescrollTop = function() {
+      //check whether the scrollY property of the window object is greater than 100. If it is, it adds the active class to the scrollTop element, otherwise it removes it.
+      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+    }
+    // add event listener to window and document objects to call the function whether the page loads or scrolls.
+    window.addEventListener('load', togglescrollTop);
+    document.addEventListener('scroll', togglescrollTop);
+    // add event listener to scrollTop element to listen to click event. When click it called method
+    scrollTop.addEventListener('click', window.scrollTo({
+      // the objects containing in the method.
+      top: 0,
+      behavior: 'smooth'
+    }));
+  }
+
+  /**
+   * Initiate glightbox
+   */
+  // create the variable and assign it to the new instance of the class.
+  const glightbox = GLightbox({
+    //the selector select all element with 'glightbox' class
+    selector: '.glightbox' //I use selector to select elements to be used as triggers for the light box
+  });
+
+  const testimonialsData = [
+    {
+      stars: 5,
+      text: "Amelia's recipe blog is a culinary gem! Her creative and diverse recipes, along with clear instructions, have expanded my cooking skills. I love how she incorporates her travel experiences into her dishes, adding a unique touch. Thanks to her blog, I've become the go-to chef among my friends!",
+      imageUrl: "../images/TestimonialImages/Profile1.jpg",
+      name: "Saul Goodman"
+    },
+    {
+      stars: 5,
+      text: "Amelia's recipe blog is my go-to resource for all things food-related. Her easy-to-follow recipes, coupled with personal stories of her travel adventures, make cooking feel like a journey itself. I trust her guidance every step of the way.",
+      imageUrl: "../images/TestimonialImages/Profile2.jpg",
+      name: "Sara Wilsson"
+    },
   
-    // Get the review data from the form
-    var name = document.getElementById('name').value;
-    var comment = document.getElementById('comment').value;
+    {
+      stars: 5,
+      text: "Amelias recipe blog is a culinary treasure trove! From gluten-free to vegan options, her diverse recipes cater to various dietary preferences. Her passion for travel shines through, taking my taste buds on an international adventure. Her organized blog makes it easy to find the perfect recipe for any occasion.",
+      imageUrl: "../images/TestimonialImages/Profile3.jpg",
+      name: "Olivia Parker"
+    },
   
+    {
+      stars: 5,
+      text: "Amelias recipe blog is a game-changer! Her creative and detailed recipes make cooking approachable. I love how her travel-inspired dishes add a sense of adventure to my everyday meals. Her blog is a constant source of inspiration. Highly recommended!",
+      imageUrl: "../images/TestimonialImages/Profile4.jpg",
+      name: "Ava Reynolds"
+    },
+  
+    {
+      stars: 5,
+      text: "Amelia Johnsons blog has become my go-to source for culinary inspiration. Her recipes are not only incredibly delicious but also accessible for home cooks like myself. I love how she infuses her passion for travel into her dishes, transporting me to different corners of the world through flavors and ingredients!'",
+      imageUrl: "../images/TestimonialImages/testimonials-2.jpg",
+      name: "Sophia Bennett"
+    },
+  ]
+  
+  
+  function submitform() {
+      event.preventDefault(); // prevent the default form submission behavior
     
-    var review = {
-      name: name,
-      image: '../images/TestimonialImages/Profile1.jpg',
-      comment: comment
-    };
-
-    reviewArray.push(review);
-
-    window.alert("Your review has been recieved!")
-};
-
-
-function populateTestimonial() {
-  // Iterate over the testimonialsData array and generate HTML for each testimonial object
-  return testimonialsData
-    .map((testimonial) => {  //.map() allows you to iterate over each element in the array and apply a function to each element, creating a new array with the results of the function applied to the original elements.
-      // Generate the stars HTML using the testimonial's stars property
-      const starsHTML = '<i class="bi bi-star-fill"></i>'.repeat(testimonial.stars);
-
-      // Return the HTML string for each testimonial, using the data from the testimonial object
-      return `
+      // Get the review data from the form
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+    
+      
+      var review = {
+        name: name,
+        image: '../images/TestimonialImages/Profile1.jpg',
+        comment: comment
+      };
+  
+      reviewArray.push(review);
+  
+      window.alert("Your review has been recieved!")
+  };
+  
+  
+  function populateTestimonial() {
+    let testimonialsHTML = "";
+  
+    testimonialsData.forEach(testimonial => {
+      testimonialsHTML += `
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <div class="stars">${starsHTML}</div> <!-- Insert the stars HTML -->
-            <p>${testimonial.text}</p> <!-- Insert the testimonial text -->
-            <div class="profile mt-auto">
-              <img src="${testimonial.imageUrl}" class="testimonial-img" alt=""> <!-- Insert the testimonial image URL -->
-              <h3>${testimonial.name}</h3> <!-- Insert the testimonial author's name -->
+            <div class="stars">
+              ${"★".repeat(testimonial.stars)}
             </div>
+            <p>${testimonial.text}</p>
+            <img src="${testimonial.imageUrl}" class="testimonial-img" alt="" />
+            <h3>${testimonial.name}</h3>
           </div>
         </div>`;
-    })
-    // Join the generated HTML strings into a single string
-    .join("");
-}
+    });
+  
+    return testimonialsHTML;
+  }
+  
+  /**
+   * Init swiper slider with 1 slide at once in desktop view
+   */
+  // initialize the new instance of the swiper class.
+  new Swiper('#testimonials .slides-1', {
+    speed: 600,
+    //enables the looping of the slider. When the last slide is reached, it will start over from the beginning.
+    loop: true,
+    //sets up automatic playback of the slider
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false // prevent slider from stopping autoplay when user interacting.
+    },
+    //set the number of slides to display
+    slidesPerView: 'auto',
+    //configure pagination for the slider
+    pagination: {
+      el: '.swiper-pagination', // where should be display
+      type: 'bullets',
+      clickable: true //  clicking on the pagination bullets to navigate directly to a specific slide.
+    },
+    // sets up navigation arrows for the slider.
+    navigation: {
+      // the options will act as next and previous buttons.
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+  
+  // Select the element with the class swiper-wrapper and set its inner HTML content to the output of the populateTestimonial() function.
+  document.querySelector("#testimonials .swiper-wrapper").innerHTML = populateTestimonial();
+  
+    /**
+     * Init swiper slider with 3 slides at once in desktop view
+     */
+    new Swiper('#testimonials .slides-3', {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      //break point for responsive swiper slider
+      breakpoints: {
+        //when viewport width is 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 40
+        },
+  
+        1200: {
+          slidesPerView: 3,
+        }
+      }
+    });
 
-// function populateTestimonial() {
-//   const testimonialsContainer = document.getElementById('swiper-wrapper');
+  /**
+   * Animation on scroll function and init
+   */
+  // this function use the AOS library with specific configuration options
+  function aos_init() {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,// whether it should occur once or everytime it is scrolled
+      mirror: false// Whether the animation should be mirrored when scrolling back up the page
+    });
+  }
+  // waits for window fully load
+  window.addEventListener('load', () => {
+    aos_init();// call the funtion after the window is fully loaded.
+  });
+});
 
-//   const length = reviewArray.length;
-
-//   for (let i = 0; i < length; i++) {
-//     const testimonial = reviewArray[i];
-
-//     const starsHtml = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
-//     const testimonialHtml = `
-//       <div class="swiper-slide">
-//         <div class="testimonial-item">
-//           <div class="stars">
-//             ${starsHtml}
-//           </div>
-//           <p>
-//             "${testimonial.comment}"
-//           </p>
-//           <div class="profile mt-auto">
-//             <img src="${testimonial.image}" class="testimonial-img" alt="">
-//             <h3>${testimonial.name}</h3>
-//           </div>
-//         </div>
-//       </div>
-//     `;
-
-//     testimonialsContainer.innerHTML += testimonialHtml;
-//   }
-//}
