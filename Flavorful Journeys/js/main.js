@@ -151,8 +151,11 @@ new Swiper('.slides-1', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   }
-
+  
 });
+
+// selecting the element with the class swiper-wrapper and setting its inner HTML content to the output of the populateTestimonial() function
+document.querySelector(".swiper-wrapper").innerHTML = populateTestimonial();
 
   /**
    * Init swiper slider with 3 slides at once in desktop view
@@ -205,3 +208,33 @@ new Swiper('.slides-1', {
     aos_init();// call the funtion after the window is fully loaded.
   });
 });
+
+function populateTestimonial() {
+  const testimonialsContainer = document.getElementById('swiper-wrapper');
+
+  const length = reviewArray.length;
+
+  for (let i = 0; i < length; i++) {
+    const testimonial = reviewArray[i];
+
+    const starsHtml = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+    const testimonialHtml = `
+      <div class="swiper-slide">
+        <div class="testimonial-item">
+          <div class="stars">
+            ${starsHtml}
+          </div>
+          <p>
+            "${testimonial.comment}"
+          </p>
+          <div class="profile mt-auto">
+            <img src="${testimonial.image}" class="testimonial-img" alt="">
+            <h3>${testimonial.name}</h3>
+          </div>
+        </div>
+      </div>
+    `;
+
+    testimonialsContainer.innerHTML += testimonialHtml;
+  }
+}
