@@ -31,8 +31,11 @@
 
     <!-- Template Main JS File -->
     <script src="../js/main.js"></script>
+
+    <!-- review JS File -->
+    <script src="../js/review.js"></script>
 </head>
-<body>
+<body onload="populateTestimonial()">
     <!-- ======= Header ======= -->
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid d-flex align-items-center justify-content-between">
@@ -151,81 +154,9 @@
           </div>
 
           <div class="slides-3 swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" id="swiper-wrapper">
 
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    "Amelia's recipe blog is a culinary gem! Her creative and diverse recipes, along with clear instructions, have expanded my cooking skills. I love how she incorporates her travel experiences into her dishes, adding a unique touch. Thanks to her blog, I've become the go-to chef among my friends!"
-                  </p>
-                  <div class="profile mt-auto">
-                    <img src="../images/TestimonialImages/Profile1.jpg" class="testimonial-img" alt="">
-                    <h3>Saul Goodman</h3>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    "Amelia's recipe blog is my go-to resource for all things food-related. Her easy-to-follow recipes, coupled with personal stories of her travel adventures, make cooking feel like a journey itself. I trust her guidance every step of the way."
-                  </p>
-                  <div class="profile mt-auto">
-                    <img src="../images/TestimonialImages/Profile2.jpg" class="testimonial-img" alt="">
-                    <h3>Sara Wilsson</h3>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    "Amelia's recipe blog is a culinary treasure trove! From gluten-free to vegan options, her diverse recipes cater to various dietary preferences. Her passion for travel shines through, taking my taste buds on an international adventure. Her organized blog makes it easy to find the perfect recipe for any occasion."
-                  </p>
-                  <div class="profile mt-auto">
-                    <img src="../images/TestimonialImages/Profile3.jpg" class="testimonial-img" alt="">
-                    <h3>Olivia Parker</h3>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    "Amelia's recipe blog is a game-changer! Her creative and detailed recipes make cooking approachable. I love how her travel-inspired dishes add a sense of adventure to my everyday meals. Her blog is a constant source of inspiration. Highly recommended!"
-                  </p>
-                  <div class="profile mt-auto">
-                    <img src="../images/TestimonialImages/Profile4.jpg" class="testimonial-img" alt="">
-                    <h3>Ava Reynolds</h3>
-                  </div>
-                </div>
-              </div> <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    "Amelia Johnson's blog has become my go-to source for culinary inspiration. Her recipes are not only incredibly delicious but also accessible for home cooks like myself. I love how she infuses her passion for travel into her dishes, transporting me to different corners of the world through flavors and ingredients. From comforting classics to exciting new creations, her blog never fails to impress and has truly elevated my cooking game!"</p>
-                  <div class="profile mt-auto">
-                    <img src="../images/TestimonialImages/Profile5.jpg" class="testimonial-img" alt="">
-                    <h3>Sophia Bennett</h3>
-                  </div>
-                </div>
-              </div> <!-- End testimonial item -->
+              <!-- The Testimonial code gets inserted here with Javascript -->
 
             </div>
             <div class="swiper-pagination"></div>
